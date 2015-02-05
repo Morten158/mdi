@@ -44,7 +44,6 @@ namespace mdi_api.menus.managers {
                 if(_navItem != null) {
                     v = view;
                     v.DrawItems(true);
-                    
                     break;
                 }
             }
