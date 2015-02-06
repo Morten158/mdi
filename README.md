@@ -73,6 +73,10 @@ differently.
 
 ![Snake] (https://github.com/Morten158/mdi_api/blob/master/sample/snake.png)
 
+- Recipe Manager
+
+![Recipe] (https://github.com/Morten158/mdi_api/blob/master/sample/recipe.png)
+
 ## Demo Projects
 
 - If you want to explore further, download the demo projects: **mdi-snake** | **mdi-basic-demo**
