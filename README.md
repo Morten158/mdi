@@ -7,7 +7,7 @@ A library that has a Menu Driven Interface based approach, and can be used in a 
 
 ## Note
 
--This library was built as a part of a C# assigment at school, in hindsight a lot of things could have been done
+- This library was built as a part of a C# assigment at school, in hindsight a lot of things could have been done
 differently.
 
 ## Example
@@ -61,7 +61,7 @@ differently.
 
 ## Create custom views
 
--Snake
+- Snake
 
 ![Snake] (https://github.com/Morten158/mdi_api/blob/master/sample/snake.png)
 
