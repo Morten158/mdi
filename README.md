@@ -17,7 +17,7 @@ Not a dealbreaker tough.
 
 ## API Documentation
 
-- I have relied on [Xml documentation] (https://msdn.microsoft.com/en-us/library/b2s063f7.aspx) comments to describe types and methods.
+- I have relied on [Xml documentation] (https://msdn.microsoft.com/en-us/library/b2s063f7.aspx) comments to describe types and functions.
 
 ## Example
     using System;
