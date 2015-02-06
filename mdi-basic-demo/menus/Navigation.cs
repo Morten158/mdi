@@ -23,7 +23,7 @@ namespace mdi_basic_demo.menus {
             content.Add(_navigate);
 
             const string infoText = "If your Menu class has other menus it would like to bring focus to, you can use a \"Navigator\". In this case " +
-                "we have an item titled Navigate that when pressed, will tell the navigator to lock this menu and focus on a new instance of this menu. " +
+                "we have an item titled Navigate that when pressed, will tell the navigator to lock this menu and focus on a new instance of this menu instead. " +
                 "And we get a hierarchy of menus. " +
                 "~ ~" +
                 "One thing to note is that when you use a navigator to bring a new menu into focus, is that you can pass an identifier argument and decide what " +
