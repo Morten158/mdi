@@ -2,10 +2,10 @@
 using mdi_api.factories;
 using mdi_api.menus;
 using mdi_api.menus.managers;
-using mdi_api.utils;
 using mdi_api.views;
 using mdi_api.views.items;
 using mdi_api.views.items.seperators;
+using mdi_basic_demo.menus.views;
 
 namespace mdi_basic_demo.menus {
 

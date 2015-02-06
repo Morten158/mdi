@@ -50,7 +50,9 @@
     <Compile Include="menus\Main.cs" />
     <Compile Include="menus\Menus.cs" />
     <Compile Include="menus\Navigation.cs" />
-    <Compile Include="menus\Views.cs" />
+    <Compile Include="menus\views\DisplayView.cs" />
+    <Compile Include="menus\views\RecipeView.cs" />
+    <Compile Include="menus\views\Views.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
