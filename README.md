@@ -32,7 +32,7 @@ differently.
 
             public Application() {
 
-                Console.Title = "My silly application";
+                Console.Title = "My stupid application";
             
                 SetResolution(Resolution.DEFAULT);
 
