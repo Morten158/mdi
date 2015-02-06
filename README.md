@@ -13,51 +13,51 @@ differently.
 ## Example
     using System;
     using mdi_api;
-using mdi_api.factories;
-using mdi_api.menus;
-using mdi_api.views.items;
+    using mdi_api.factories;
+    using mdi_api.menus;
+    using mdi_api.views.items;
 
-namespace Dummy {
-    class Application : ConsoleApplication {
+    namespace Dummy {
+        class Application : ConsoleApplication {
 
-        private readonly Menu _menu;
-        private readonly Item _addItem, _quit;
-        private int _itemAdded = 0;
+            private readonly Menu _menu;
+            private readonly Item _addItem, _quit;
+            private int _itemAdded = 0;
 
-        public Application() {
+            public Application() {
 
-            Console.Title = "My stupid application";
+                Console.Title = "My stupid application";
             
-            SetResolution(Resolution.DEFAULT);
+                SetResolution(Resolution.DEFAULT);
 
-            _menu = new Menu(Console.Title);
-            _menu.Get(ViewFactory.CONTENT).VerticalSpacing = 2;
+                _menu = new Menu(Console.Title);
+                _menu.Get(ViewFactory.CONTENT).VerticalSpacing = 2;
 
-            _addItem = new Item("Add Item");
-            _addItem.AddHotKeyListener(ConsoleKey.A, AddItem);
-            _quit = new Item("Quit", Item.Alignment.LEFT);
-            _quit.AddHotKeyListener(ConsoleKey.Q, Terminate);
+                _addItem = new Item("Add Item");
+                _addItem.AddHotKeyListener(ConsoleKey.A, AddItem);
+                _quit = new Item("Quit", Item.Alignment.LEFT);
+                _quit.AddHotKeyListener(ConsoleKey.Q, Terminate);
 
-            _menu.Get(ViewFactory.CONTENT).Add(_addItem);
-            _menu.Get(ViewFactory.FOOTER).Add(_quit);
-        }
+                _menu.Get(ViewFactory.CONTENT).Add(_addItem);
+                _menu.Get(ViewFactory.FOOTER).Add(_quit);
+            }
 
-        public void AddItem() {
-            if(_itemAdded < 6)
-                _menu.Get(ViewFactory.CONTENT).Add(new Item("Item Added " + ++_itemAdded));
-        }
+            public void AddItem() {
+                if(_itemAdded < 6)
+                    _menu.Get(ViewFactory.CONTENT).Add(new Item("Item Added " + ++_itemAdded));
+            }
 
-        protected override void Terminate() {
-            _addItem.RemoveHotKeyListener(AddItem);
-            _quit.RemoveHotKeyListener(Terminate);
-            base.Terminate();
-        }
+            protected override void Terminate() {
+                _addItem.RemoveHotKeyListener(AddItem);
+                _quit.RemoveHotKeyListener(Terminate);
+                base.Terminate();
+            }
 
-        static void Main(string[] args) {
-            new Application();
+            static void Main(string[] args) {
+                new Application();
+            }
         }
     }
-}
 
 
 ## Want to Contribute?
