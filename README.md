@@ -3,7 +3,13 @@ A library that has a Menu Driven Interface based approach, and can be used in a 
 
 ## Requirements
 
-- **Windows:** .NETFramework,Version=v4.5.
+- **.NETFramework,Version=v4.5.**
+
+## Usage
+
+- You can download or clone the whole solution or just download the dll file and reference it in your project
+
+[dll] (https://github.com/Morten158/mdi_api/raw/master/dll/mdi-api.dll)
 
 ## Note
 
@@ -59,11 +65,15 @@ differently.
         }
     }
 
-## Create custom views
+## Create custom menus
 
 - Snake
 
 ![Snake] (https://github.com/Morten158/mdi_api/blob/master/sample/snake.png)
+
+## Demo Projects
+
+- If you want to see more, download the demo projects: **mdi-snake** **mdi-basic-demo**
 
 ## Want to Contribute?
 
