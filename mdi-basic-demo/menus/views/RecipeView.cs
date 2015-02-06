@@ -61,7 +61,7 @@ namespace mdi_basic_demo.menus.views {
 
         public RecipeView(Rectangle rectangle) : base(rectangle) {
 
-            Item recipes = new Item("My facorite Recipies") {Separator = new Separator(GetHorizontalSpace() - 4)};
+            Item recipes = new Item("My favorite Recipies") {Separator = new Separator(GetHorizontalSpace() - 4)};
             
             _pasta = new Item("BLT Pasta Skillet");
             _pasta.AddHotKeyListener(ConsoleKey.P, DisplayPasta);
