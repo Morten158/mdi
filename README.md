@@ -1,5 +1,5 @@
 # C# - Menu Driven Interface
-A library that has a Menu Driven Interface based approach, and can be used in a C# console application.
+A library that has a Menu Driven Interface based approach, and is intended for C# console applications.
 
 ## Requirements
 
@@ -13,6 +13,10 @@ A library that has a Menu Driven Interface based approach, and can be used in a 
 
 - This library was built as a part of a C# assigment at school, in hindsight a lot of things could have been done
 differently.
+
+## API Documentation
+
+- I have relied on [Xml documentation] (https://msdn.microsoft.com/en-us/library/b2s063f7.aspx) comments to describe types and methods.
 
 ## Example
     using System;
@@ -71,7 +75,7 @@ differently.
 
 ## Demo Projects
 
-- If you want to see more, download the demo projects: **mdi-snake** **mdi-basic-demo**
+- If you want to explore further, download the demo projects: **mdi-snake** | **mdi-basic-demo**
 
 ## Want to Contribute?
 
