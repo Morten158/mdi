@@ -12,7 +12,8 @@ A library that has a Menu Driven Interface based approach, and is intended for C
 ## Note
 
 - This library was built as a part of a C# assigment at school, in hindsight a lot of things could have been done
-differently.
+differently. Also, sometimes when the program is exited by using the "cross" button it crashes, even tough everything is cleaned up before it actually exits.
+Not a dealbreaker tough.
 
 ## API Documentation
 
