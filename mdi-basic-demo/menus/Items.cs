@@ -16,16 +16,16 @@ namespace mdi_basic_demo.menus {
             View content = Get(ViewFactory.CONTENT);
             content.VerticalSpacing = 3;
 
-            _align = new Item("Align") {Separator = new Separator(40)};
+            _align = new Item("Align Item") {Separator = new Separator(40)};
             _align.AddHotKeyListener(ConsoleKey.A, Align);
 
-            _data = new Item("Data Object", Item.Alignment.CENTER, 0) {Separator = new Separator(40)};
-            _data.AddHotKeyListener(ConsoleKey.O, Data);
+            _data = new Item("Accumulate Item's Data", Item.Alignment.CENTER, 0) {Separator = new Separator(40)};
+            _data.AddHotKeyListener(ConsoleKey.I, Data);
 
-            _description = new Item("Description", Item.Alignment.CENTER, null, "An item with a description") {Separator = new Separator(40)};
+            _description = new Item("Append to Item's Description", Item.Alignment.CENTER, null, "An item with a description") {Separator = new Separator(40)};
             _description.AddHotKeyListener(ConsoleKey.D, Description);
 
-            _toggle = new Item("Toggle", Item.Alignment.CENTER, "ON") {Separator = new Separator(40)};
+            _toggle = new Item("Toggle Item", Item.Alignment.CENTER, "ON") {Separator = new Separator(40)};
             _toggle.AddHotKeyListener(ConsoleKey.T, Toggle);
 
             Get(ViewFactory.CONTENT).AddAll(_align, _data, _description, _toggle);
