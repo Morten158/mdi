@@ -7,9 +7,7 @@ A library that has a Menu Driven Interface based approach, and can be used in a 
 
 ## Usage
 
-- You can download or clone the whole solution or just download the dll file and reference it in your project
-
-[dll] (https://github.com/Morten158/mdi_api/raw/master/dll/mdi-api.dll)
+- You can download or clone the whole solution or just download the dll file and reference it in your project - [dll] (https://github.com/Morten158/mdi_api/raw/master/dll/mdi-api.dll)
 
 ## Note
 
