@@ -1,15 +1,14 @@
 ﻿using System;
-using mdi_api.menus;
 using mdi_api.views;
 using mdi_api.views.geometri;
 using mdi_api.views.items;
 using mdi_api.views.items.seperators;
 
-namespace mdi_basic_demo.menus {
-    class Views : Menu {
+namespace mdi_basic_demo.menus.views {
+    class RecipeView : View {
 
-        private readonly View _displayView;
-        private readonly Item _displayItem;
+        public delegate void OnChangeRecipe(Item item);
+        private OnChangeRecipe _recipeEvent;
 
         private readonly Item _pasta;
         const string PASTA = "*8 ounces whole wheat fusilli pasta. " +
@@ -59,14 +58,10 @@ namespace mdi_basic_demo.menus {
             "~ ~ " +
             "* If you have items that changes realtime within a view, then you could call DrawItems(true) on the view to clear the items text from the view, then change the item, and finally call DrawItems() again, but this time without arguments. Example given later.";
 
-        public Views() {
 
-            RemoveAll();
+        public RecipeView(Rectangle rectangle) : base(rectangle) {
 
-            //------------------------------
-            View recipeOverView = new View(
-                new Rectangle(0, 0, 30, Console.WindowHeight-5));
-            Item recipes = new Item("My facorite Recipies"){Separator = new Separator(recipeOverView.GetHorizontalSpace() - 4)};
+            Item recipes = new Item("My facorite Recipies") {Separator = new Separator(GetHorizontalSpace() - 4)};
             
             _pasta = new Item("BLT Pasta Skillet");
             _pasta.AddHotKeyListener(ConsoleKey.P, DisplayPasta);
@@ -75,52 +70,37 @@ namespace mdi_basic_demo.menus {
             _info = new Item("About Views");
             _info.AddHotKeyListener(ConsoleKey.A, DisplayInfo);
 
-            recipeOverView.Add(recipes);
-            recipeOverView.VerticalSpacing = 2;
-            recipeOverView.AddAll(_pasta, _chakalaka, _info);
+            Add(recipes);
+            VerticalSpacing = 2;
+            AddAll(_pasta, _chakalaka, _info);
 
             _pasta.Description = PASTA;
             _chakalaka.Description = CHAKALAKA;
             _info.Description = INFO;
             _pasta.Data = _chakalaka.Data = "Ingredients";
             _info.Data = "Tips";
-            Add("recipe_over_view", recipeOverView);
-
-            //------------------------------
-            View bottomView = new View(
-                new Rectangle(0, Console.WindowHeight-5, 30, 4));
-            bottomView.Add(new Item("Back"));
-
-            Add("bottom_view", bottomView);
-
-            //------------------------------
-            _displayView = new View(
-                new Rectangle(30, 0, Console.WindowWidth-31, Console.WindowHeight-1));
-
-            _displayItem = new Item {Title = ""};
-
-            _displayView.Add(_displayItem);
-            Add("recipes_display_view", _displayView);
         }
 
-        public void DisplayPasta() {DipsayItem(_pasta);}
-        public void DisplayChakalaka() {DipsayItem(_chakalaka);}
-        public void DisplayInfo() {DipsayItem(_info);}
+        public void DisplayPasta() {ChangeDisplayView(_pasta);}
+        public void DisplayChakalaka() {ChangeDisplayView(_chakalaka);}
+        public void DisplayInfo() {ChangeDisplayView(_info);}
 
-        public void DipsayItem(Item item) {
-            if(_displayItem.Title == item.Title)
-                return;
-            _displayView.DrawItems(true);
-            _displayItem.Title = item.Title;
-            _displayItem.Separator = new Separator(_displayView.GetHorizontalSpace()-8);
-            _displayItem.Data = item.Data;
-            _displayItem.Description = item.Description;
-            _displayView.DrawItems();
+        public void ChangeDisplayView(Item item) {
+            _recipeEvent(item);
         }
 
-        public override void Dispose() {
+        public void AddRecipeChangeListener(OnChangeRecipe listener) {
+            _recipeEvent += listener;
+        }
+
+        public void RemoveRecipeChangeListener(OnChangeRecipe listener) {
+            _recipeEvent -= listener;
+        }
+
+        public void Dispose() {
             _pasta.RemoveHotKeyListener(DisplayPasta);
             _chakalaka.RemoveHotKeyListener(DisplayChakalaka);
+            _info.RemoveHotKeyListener(DisplayInfo);
         }
     }
 }
