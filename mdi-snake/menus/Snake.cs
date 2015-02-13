@@ -16,6 +16,9 @@ namespace mdi_snake.menus {
         public Snake()
             : base("Snake", Application.Theme) {
 
+            int ticks = new Prompt("Game Speed (50-200)").GetInt(new Range(50, 200));
+            EventDispatchThread.SetTick(ticks);
+
             Remove(ViewFactory.HEADER, true);
             Remove(ViewFactory.CONTENT, true);
 
