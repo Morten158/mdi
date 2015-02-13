@@ -77,7 +77,6 @@ namespace mdi_api.views.items {
             Data = data;
             Description = description;
             Separator = new Separator(-1);
-            Binder = ConsoleKey.Escape;
             Enabled = true;
         }
 
