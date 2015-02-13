@@ -77,6 +77,7 @@ namespace mdi_api.views.items {
             Data = data;
             Description = description;
             Separator = new Separator(-1);
+            Binder = ConsoleKey.Escape;
             Enabled = true;
         }
 
@@ -194,11 +195,7 @@ namespace mdi_api.views.items {
                 Console.SetCursorPosition(x, startY);
 
                 char c = Title[i];
-                if(binder == c) {
-                    Console.ForegroundColor = theme.HotKey;
-                } else {
-                    Console.ForegroundColor = theme.Foreground;
-                }
+                Console.ForegroundColor = binder == c ? theme.HotKey : theme.Foreground;
                 Console.Write(c);
             }
             Console.ForegroundColor = theme.Foreground;
