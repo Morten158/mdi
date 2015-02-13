@@ -17,7 +17,7 @@ namespace mdi_snake {
 
         public Application() {
 
-            Console.Title = "MDI-Snake";
+            Console.Title = "mdi-Snake";
             Resolution = Resolution.DEFAULT;
             Theme = Theme.DEFAULT;
 
