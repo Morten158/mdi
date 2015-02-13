@@ -46,7 +46,6 @@ namespace mdi_snake {
             _quit.RemoveHotKeyListener(Terminate);
 
             base.Terminate();
-            Environment.Exit(0);
         }
 
         static void Main() {
